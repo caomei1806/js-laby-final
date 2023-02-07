@@ -8,14 +8,15 @@ canvas.width = windowWidth
 canvas.hight = windowHeight
 
 class Circle {
-	constructor(id, xposition, yposition, radius, size, color, speed) {
+	constructor(id, xposition, yposition, radius, color, speed, dx, dy) {
 		this.id = id
 		this.xposition = xposition
 		this.yposition = yposition
 		this.radius = radius
-		this.size = size
 		this.color = color
 		this.speed = speed
+		this.dx = dx
+		this.dy = dy
 	}
 	draw(context) {
 		context.beginPath()
@@ -28,5 +29,23 @@ class Circle {
 			false
 		)
 		context.stroke()
+		context.closePath()
 	}
+	move() {
+		this.draw(context)
+
+		this.xposition += this.dx
+		this.yposition += this.dy
+	}
+}
+
+let decorateCircle = () => {
+	let xpos = Math.random() * windowWidth
+	let ypos = Math.random() * windowHeight
+	let radius = (Math.random() * windowWidth) / 5
+	let color = Math.floor(Math.random() * 16777215).toString(16)
+}
+
+let drawCircle = (circle) => {
+	circle.draw(context)
 }
