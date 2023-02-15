@@ -31,10 +31,18 @@ class Circle {
 			Math.PI * 2,
 			false
 		)
+
 		context.strokeStyle = this.color
 		context.stroke()
 		context.fillStyle = this.color
 		context.fill()
+
+		context.font = 'bold 20px verdana, sans-serif'
+		context.fillStyle = 'white'
+		context.fillText(Math.ceil(this.radius), this.xposition, this.yposition)
+		context.textAlign = 'center'
+		context.textBaseline = 'middle'
+
 		context.closePath()
 	}
 	move() {
@@ -74,7 +82,7 @@ let drawCircle = (circle) => {
 let circlesOnBoard = []
 
 let createXCircles = () => {
-	let amount = Math.random() * 20 + 2
+	let amount = Math.random() * 10 + 2
 
 	for (let i = 1; i < amount; i++) {
 		// xposition, yposition, radius, color, speed, dx, dy
@@ -91,6 +99,10 @@ let calculateDistance = (xpos1, xpos2, ypos1, ypos2) => {
 		Math.pow(xpos2 - xpos1, 2) + Math.pow(ypos2 - ypos1, 2)
 	)
 	return distance
+}
+
+let manageSpeed = (circle) => {
+	
 }
 
 let handleCircleCollision = (circ1, circ2) => {
@@ -111,11 +123,13 @@ let handleCircleCollision = (circ1, circ2) => {
 			eatenCircle = circ1
 		}
 		absorbsionPower = eatenCircle.radius * 0.0005
+		console.log('ap:' + absorbsionPower)
 		if (eatenCircle.radius - absorbsionPower <= 10) {
 			circlesOnBoard.pop(eatenCircle)
 		}
 		eatenCircle.strokeStyle = 'red'
 		eatenCircle.radius -= absorbsionPower
+		eatenCircle.speed += absorbsionPower
 		eatenCircle === circ1
 			? (circ2.radius += absorbsionPower)
 			: (circ1.radius += absorbsionPower)
