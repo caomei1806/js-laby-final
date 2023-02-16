@@ -35,7 +35,7 @@ const addCityWeather = (currentCityWeather) => {
 	const { name, main, sys, weather, wind } = currentCityWeather
 	const { temp, humidity, pressure, feels_like } = main
 	const { country, sunrise, sunset } = sys
-	const { description } = weather[0]
+	const { description, id: weatherId } = weather[0]
 	const simpleWeather = weather[0].main
 	const { deg, speed } = wind
 
@@ -60,15 +60,22 @@ const addCityWeather = (currentCityWeather) => {
 
 	cityWeatherBox.appendChild(cityName)
 
-	Object.keys(weatherDetails).forEach((detail) => {
+	Object.keys(weatherDetails).forEach(async (detail) => {
 		if (detail !== 'city') {
 			const detailBox = document.createElement('div')
 			detailBox.classList.add(`weather-city-${detail}`)
 			detailBox.textContent = `${detail}: `
 
 			const detailNo = document.createElement('span')
-			detailNo.textContent = weatherDetails[detail]
-			console.log(weatherDetails[detail])
+			if (detail !== 'description')
+				detailNo.textContent = weatherDetails[detail]
+			else {
+				console.log(simpleWeather)
+				const icon = await matchWeatherIcon(simpleWeather, weatherId)
+				if (icon) {
+					detailNo.innerHTML = `${icon} \n ${weatherDetails[detail]}`
+				}
+			}
 			detailNo.classList.add(`weather-city-${detail}No`)
 
 			detailBox.appendChild(detailNo)
@@ -97,9 +104,21 @@ const addCityWeather = (currentCityWeather) => {
 	weatherBox.appendChild(cityWeatherBox)
 }
 
-const matchWeatherIcon = (weatherDesc) => {
+const matchWeatherIcon = async (weatherDesc, weatherId = 0) => {
 	try {
-		const weatherIcons = []
+		const res = await fetch('./weatherIcons.json')
+		const weatherIcons = await res.json()
+
+		const iconById = weatherIcons.find((weather) => weather.id === weatherId)
+		if (iconById) {
+			return iconById.icon
+		} else {
+			const iconByName = weatherIcons.filter(
+				(weather) => weather.name === weatherDesc
+			)
+
+			return iconByName[0].icon
+		}
 	} catch (err) {
 		console.log(err)
 	}
