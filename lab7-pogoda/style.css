@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: rgb(39, 37, 37);
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.search-bar {
+  width: 80%;
+  padding: 1em 2em;
+  border: none;
+  background-color: rgb(71, 67, 67);
+  color: rgb(221, 221, 221);
+}
+.search-bar::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(221, 221, 221);
+  opacity: 1; /* Firefox */
+}
+.search-bar::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(221, 221, 221);
+  opacity: 1; /* Firefox */
+}
+
+.weather {
+  margin-top: 3em;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.weather-city {
+  width: calc(70% - 6em);
+  padding: 1em 3em;
+  background-color: rgb(165, 159, 159);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.weather-city-name {
+  width: 100%;
+  flex-basis: 100%;
+  flex: auto;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}/*# sourceMappingURL=style.css.map */

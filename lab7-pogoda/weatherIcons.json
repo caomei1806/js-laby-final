@@ -1,0 +1,27 @@
+[
+	{ "name": "Thunderstorm", "icon": "<i class='fa-light fa-cloud-bolt'></i>" },
+	{ "name": "Drizzle", "icon": "<i class='fa-light fa-cloud-drizzle'></i>" },
+	{ "name": "Rain", "icon": "<i class='fa-light fa-raindrops'></i>" },
+	{ "name": "Snow", "icon": "<i class='fa-light fa-snowflake'></i>" },
+	{ "name": "Mist", "icon": "<i class='fa-light fa-droplet'></i> " },
+	{ "name": "Smoke", "icon": "<i class='fa-light fa-smoke'></i>" },
+	{ "name": "Haze", "icon": "<i class='fa-light fa-sun-haze'></i>" },
+	{ "name": "Dust", "icon": "<i class='fa-light fa-sun-dust'></i> " },
+	{ "name": "Fog", "icon": "<i class='fa-light fa-cloud-fog'></i> " },
+	{ "name": "Sand", "icon": "<i class='fa-light fa-hourglass'></i> " },
+	{ "name": "Ash", "icon": "<i class='fa-light fa-volcano'></i> " },
+	{ "name": "Squall", "icon": "<i class='fa-light fa-cloud-word'></i> " },
+	{ "name": "Tornado", "icon": "<i class='fa-light fa-tornado'></i> " },
+	{ "name": "Clear", "icon": "<i class='fa-light fa-sun'></i>" },
+	{ "name": "Clouds", "icon": "<i class='fa-light fa-cloud'></i> " },
+	{
+		"id": "801",
+		"name": "Clouds",
+		"icon": "<i class='fa-light fa-sun-cloud'></i> "
+	},
+	{
+		"id": "802",
+		"name": "Clouds",
+		"icon": "<i class='fa-light fa-clouds-sun'></i> "
+	}
+]
