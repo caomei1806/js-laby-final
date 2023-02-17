@@ -1,1 +1,12 @@
-[]
+[
+	{ "name": "temp", "icon": "<i class='fas fa-temperature-high'></i>" },
+	{ "name": "humidity", "icon": "<i class='fas fa-water'></i>" },
+	{ "name": "feels_like", "icon": "<i class='fas fa-heart'></i>" },
+	{ "name": "country", "icon": "<i class='fas fa-globe'></i>" },
+	{ "name": "sunrise", "icon": "<i class='far fa-sun'></i>" },
+	{ "name": "sunset", "icon": "<i class='fas fa-cloud-sun'></i>" },
+	{ "name": "description", "icon": "<i class='fas fa-circle-info'></i>" },
+	{ "name": "wind", "icon": "<i class='fas fa-wind'></i>" },
+	{ "name": "speed", "icon": "<i class='fas fa-gauge'></i>" },
+	{ "name": "pressure", "icon": "<i class='fas fa-angles-down'></i>" }
+]

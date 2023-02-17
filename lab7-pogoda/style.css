@@ -12,7 +12,9 @@ body {
 
 .search {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100vw;
 }
 .search-bar {
@@ -52,6 +54,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  gap: 1em;
+  text-align: center;
 }
 .weather-city-name {
   width: 100%;
@@ -61,4 +65,37 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 1em;
+}
+.weather-city-wind, .weather-city-description {
+  text-align: left;
+}
+.weather-city > *:first-letter {
+  text-transform: uppercase;
+}
+
+.btn {
+  background-color: none;
+  border: none;
+  width: 100px;
+  cursor: pointer;
+}
+.btn-delete {
+  color: rgb(147, 39, 39);
+  font-size: large;
+  font-weight: bold;
+  background-color: transparent;
+}
+.btn-light {
+  color: rgb(205, 200, 200);
+}
+
+.error {
+  background-color: rgb(147, 39, 39);
+  color: rgb(205, 200, 200);
+  padding: 1em;
+  font-size: 0.8em;
+}
+
+.deleted {
+  opacity: 0;
 }/*# sourceMappingURL=style.css.map */
