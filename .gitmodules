@@ -1,3 +1,6 @@
 [submodule "slider"]
 	path = slider
 	url = https://github.com/caomei1806/js-laby-part3.git
+[submodule "notes"]
+	path = notes
+	url = https://github.com/caomei1806/todo-vanilla-js.git
