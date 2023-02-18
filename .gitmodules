@@ -1,0 +1,3 @@
+[submodule "slider"]
+	path = slider
+	url = https://github.com/caomei1806/js-laby-part3.git

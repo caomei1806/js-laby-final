@@ -86,7 +86,9 @@ const buildWeatherDOM = (weatherDetails) => {
 						default:
 							break
 					}
-					detailNo.textContent = `${weatherDetails[detail]}${unit}`
+					if (detail !== 'sunrise' && detail !== 'sunset')
+						detailNo.textContent = `${weatherDetails[detail]}${unit}`
+					else detailNo.textContent = time_convert(weatherDetails[detail])
 				} else {
 					const icon = await matchWeatherIcon(simpleWeather, weatherId)
 					if (icon) {
@@ -273,19 +275,8 @@ const deleteElement = (event) => {
 weatherBox.addEventListener('click', deleteWeather)
 query.parentElement.addEventListener('click', deleteElement)
 
-const dateBuilder = (today) => {
-	let date = String(new window.Date())
-	date = date.slice(3, 15)
-	let days = [
-		'Sunday',
-		'Monday',
-		'Tuesday',
-		'Wednesday',
-		'Thursday',
-		'Friday',
-		'Saturday',
-	]
-	let day = days[today.getDay()]
-
-	return `${day}, ${date}`
+function time_convert(num) {
+	var date = new Date(num)
+	var timestr = date.toLocaleTimeString()
+	return timestr
 }
